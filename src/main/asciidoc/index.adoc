@@ -1,0 +1,119 @@
+= Spring Rest Documentation
+Documentation for spring rest docs example;
+:doctype: book
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectlinks:
+
+[[overview]]
+== Overview
+
+This documentation provides information about the rest api for Spring boot rest docs. Place sample description here
+
+[[overview-http-verbs]]
+== HTTP verbs
+
+This RESTful API tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP verbs.
+
+|===
+| Verb | Usage
+
+| `GET`
+| Used to retrieve a resource
+
+| `POST`
+| Used to create a new resource
+
+| `PUT`
+| Used to update an existing resource, including partial updates
+
+| `DELETE`
+| Used to delete an existing resource
+|===
+
+[[overview-http-status-codes]]
+== HTTP status codes
+
+This RESTful API tries to adhere as closely as possible to standard HTTP and REST conventions in its
+use of HTTP status codes.
+
+|===
+| Status code | Usage
+
+| `200 OK`
+| The request completed successfully
+
+| `201 Created`
+| A new resource has been created successfully. The resource's URI is available from the response's
+`Location` header
+
+| `204 No Content`
+| An update to an existing resource has been applied successfully
+
+| `400 Bad Request`
+| The request was malformed. The response body will include an error providing further information
+
+| `404 Not Found`
+| The requested resource did not exist
+|===
+
+[[resources]]
+= Resources
+
+[[resources-get-countries]]
+== Save a country
+ 
+A `POST` request will save a country.
+
+=== Response structure
+ 
+include::{snippets}/saveCountry/response-fields.adoc[]
+ 
+=== Example request
+ 
+include::{snippets}/saveCountry/http-request.adoc[]
+
+=== Example response
+ 
+include::{snippets}/saveCountry/http-response.adoc[]
+
+[[resources-get-countries]]
+== Get all countries
+ 
+A `GET` request will get all of the countries.
+
+=== Response structure
+ 
+include::{snippets}/getCountries/response-fields.adoc[]
+ 
+=== Example request
+ 
+include::{snippets}/getCountries/curl-request.adoc[]
+
+=== Example response
+ 
+include::{snippets}/getCountries/http-response.adoc[]
+
+[[resources-get-country-by-id]]
+== Get a country by id
+ 
+A `GET` request will get a country.
+
+=== Request structure
+ 
+include::{snippets}/getCountryById/path-parameters.adoc[]
+
+=== Response structure
+ 
+include::{snippets}/getCountryById/response-fields.adoc[]
+ 
+=== Example request
+ 
+include::{snippets}/getCountryById/curl-request.adoc[]
+
+=== Example response
+ 
+include::{snippets}/getCountryById/http-response.adoc[]
